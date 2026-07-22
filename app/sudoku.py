@@ -211,23 +211,28 @@ def sudoku_component_html(puzzle, solution, cell_px=42):
 def render_sudoku():
     st.subheader("Sudoku")
 
-    difficulty = st.selectbox(
-        "Difficulty",
-        options=("Easy", "Medium", "Hard")
-    )
- 
-    if "sudoku_puzzle" not in st.session_state:
-        puzzle, solution = make_sudoku_puzzle(difficulty)
-        st.session_state.sudoku_puzzle = puzzle
-        st.session_state.sudoku_solution = solution
- 
-    if st.button("New Puzzle", key="sudoku_new"):
-        puzzle, solution = make_sudoku_puzzle(difficulty)
-        st.session_state.sudoku_puzzle = puzzle
-        st.session_state.sudoku_solution = solution
-        st.rerun()
+    col1, col2 = st.columns([1, 8])
 
+    with col1:
+        difficulty = st.selectbox(
+            "Difficulty",
+            options=("Easy", "Medium", "Hard")
+        )
 
+    with col2:
+        st.markdown("<div style='margin-bottom: 28px;'></div>", unsafe_allow_html=True)
+        
+        if "sudoku_puzzle" not in st.session_state:
+            puzzle, solution = make_sudoku_puzzle(difficulty)
+            st.session_state.sudoku_puzzle = puzzle
+            st.session_state.sudoku_solution = solution
+         
+        if st.button("New Puzzle", key="sudoku_new"):
+            puzzle, solution = make_sudoku_puzzle(difficulty)
+            st.session_state.sudoku_puzzle = puzzle
+            st.session_state.sudoku_solution = solution
+            st.rerun()
+ 
  
     st.caption("Click a box to type a digit 1-9. Check Solution highlights right (green) vs wrong (red) cells; Reveal Puzzle fills in the answer.")
  
