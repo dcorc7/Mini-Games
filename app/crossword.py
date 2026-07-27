@@ -281,10 +281,10 @@ function handleKeydown(e, r, c) {
   if (e.key === "Backspace" && !e.target.value) {
     const prev = nextCellInWord(r, c, currentDir, -1);
     if (isLetter(prev[0], prev[1])) selectCell(prev[0], prev[1], currentDir);
-  } else if (e.key === "ArrowRight") { e.preventDefault(); if (isLetter(r, c + 1)) selectCell(r, c + 1, "across"); }
-  else if (e.key === "ArrowLeft") { e.preventDefault(); if (isLetter(r, c - 1)) selectCell(r, c - 1, "across"); }
-  else if (e.key === "ArrowDown") { e.preventDefault(); if (isLetter(r + 1, c)) selectCell(r + 1, c, "down"); }
-  else if (e.key === "ArrowUp") { e.preventDefault(); if (isLetter(r - 1, c)) selectCell(r - 1, c, "down"); }
+  } else if (e.key === "ArrowRight") { e.preventDefault(); if (isLetter(r, c + 1)) selectCell(r, c + 1, "down"); }
+  else if (e.key === "ArrowLeft") { e.preventDefault(); if (isLetter(r, c - 1)) selectCell(r, c - 1, "down"); }
+  else if (e.key === "ArrowDown") { e.preventDefault(); if (isLetter(r + 1, c)) selectCell(r + 1, c, "across"); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); if (isLetter(r - 1, c)) selectCell(r - 1, c, "across"); }
 }
  
 function checkCrossword() {
