@@ -211,7 +211,12 @@ for (let r = 0; r < rows; r++) {
       inp.maxLength = 1;
       inp.autocomplete = "off";
       inp.dataset.r = r; inp.dataset.c = c;
-      inp.addEventListener("focus", () => selectCell(r, c, null));
+      inp.addEventListener("click", () => selectCell(r, c, null));
+      inp.addEventListener("focus", () => {
+          currentR = r;
+          currentC = c;
+          updateHighlight();
+      });
       inp.addEventListener("keydown", (e) => handleKeydown(e, r, c));
       inp.addEventListener("input", (e) => handleInput(e, r, c));
       cell.appendChild(inp);
