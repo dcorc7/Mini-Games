@@ -7,17 +7,42 @@ import json
 # ---------------------
 
 SOLUTION_GRID = [
-    ["C", "R", "A", "N", "E"],
-    ["O", None, "R", None, "G"],
-    ["D", None, "C", None, "O"],
-    ["E", None, None, None, None],
+    [None, None, None, None, None, "C", "A", "N", "C", "U", "N"],
+    [None, None, None, None, "T", "A", "X", "E", "S", None, "U"],
+    [None, None, None, "C", "A", "R", "L", None, "G", "E", "M"],
+    [None, "W", "O", "O", None, "M", "E", "M", "O", None, "E"],
+    ["P", "A", "D", "D", "L", "E", "S", None, None, None, "R"],
+    ["A", "M", None, "Y", "E", "N", None, None, "O", "R", "A"],
+    ["D", "O", "T", None, "B", None, "C", "O", "R", "A", "L"],
+
 ]
  
 CLUES = {
-    "CRANE": "Long-legged wading bird, or a machine that lifts heavy loads",
-    "CODE": "What this whole app is written in",
-    "ARC": "A curved path, or a story's dramatic shape",
-    "EGO": "One's sense of self-importance",
+    "CANCUN": "mexico",
+    "TAXES": "pay",
+    "CARL": "middle name",
+    "GEM": "your initials",
+    "WOO": "wine zoo",
+    "MEMO": "law thing",
+    "PADDLES": "pickleball tool",
+    "AM": "not PM",
+    "YEN": "japan currency",
+    "ORA": "Rita",
+    "DOT": "gummy candy",
+    "CORAL": "Reef",
+    "PAD": "thai",
+    "WAMO": "self driving car",
+    "OD": "overdose",
+    "CODY": "____ simpson",
+    "LEB": "your company",
+    "CARMEN": "Playa Del _____",
+    "AXLES": "Wheel and _____",
+    "TA": "my georgetown job",
+    "NE": "where noah kahans sings about",
+    "CSGO": "game I play",
+    "NUMERAL": "romans use to count",
+    "OR": "surgery location",
+    "RA": "residant advisor",
 }
  
  
