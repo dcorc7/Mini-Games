@@ -16,7 +16,7 @@ def main():
     st.title("Gwynn and David's 3rd Anniversary!!!", text_alignment = "Center")
     st.caption("Anniversary schedule and games - Play them now.", text_alignment = "Center")
 
-    tab1, tab2, tab3, tab4 = st.tabs(["Home", "Crossword", "Sudoku"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Home", "Schedule", "Crossword", "Sudoku"])
 
     with tab1:
         render_home()
