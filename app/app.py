@@ -1,9 +1,9 @@
 import streamlit as st
 
-from app.pages.home import render_home
-from app.pages.crossword import render_crossword
-from app.pages.sudoku import render_sudoku
-from app.pages.schedule import render_schedule
+from pages.home import render_home
+from pages.crossword import render_crossword
+from pages.sudoku import render_sudoku
+from pages.schedule import render_schedule
 
 
 st.set_page_config(page_title="Anniverary", page_icon="", layout="wide")
