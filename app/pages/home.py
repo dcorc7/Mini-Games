@@ -4,6 +4,6 @@ import streamlit as st
 # ----- HOME PAGE -----
 # ---------------------
 
-def home():
+def render_home():
     st.subheader("Instructions")
     st.caption("Home Page")

@@ -1,10 +1,9 @@
 import streamlit as st
-import random
-import copy
 
-from home import home
-from crossword import render_crossword
-from sudoku import render_sudoku
+from app.pages.home import render_home
+from app.pages.crossword import render_crossword
+from app.pages.sudoku import render_sudoku
+from app.pages.schedule import render_schedule
 
 
 st.set_page_config(page_title="Anniverary", page_icon="", layout="wide")
@@ -14,16 +13,18 @@ st.set_page_config(page_title="Anniverary", page_icon="", layout="wide")
 # ---------------------------
 
 def main():
-    st.title("Anniversary Games")
-    st.caption("Play them now.")
+    st.title("Gwynn and David's 3rd Anniversary!!!", text_alignment = "Center")
+    st.caption("Anniversary schedule and games - Play them now.", text_alignment = "Center")
 
-    tab1, tab2, tab3 = st.tabs(["Home", "Crossword", "Sudoku"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Home", "Crossword", "Sudoku"])
 
     with tab1:
-        home()
+        render_home()
     with tab2:
-        render_crossword()
+        render_schedule()
     with tab3:
+        render_crossword()
+    with tab4:
         render_sudoku()
 
 

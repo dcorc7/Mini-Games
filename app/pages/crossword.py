@@ -24,7 +24,7 @@ CLUES = {
     "GEM": "your initials",
     "WOO": "wine zoo",
     "MEMO": "law thing",
-    "PADDLES": "pickleball tool",
+    "PADDLES": "pickleball tools",
     "AM": "not PM",
     "YEN": "japan currency",
     "ORA": "Rita",
