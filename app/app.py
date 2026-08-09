@@ -1,9 +1,9 @@
 import streamlit as st
 
-from pages.home import render_home
-from pages.crossword import render_crossword
-from pages.sudoku import render_sudoku
-from pages.schedule import render_schedule
+from tabs.home import render_home
+from tabs.crossword import render_crossword
+from tabs.sudoku import render_sudoku
+from tabs.schedule import render_schedule
 
 
 st.set_page_config(page_title="Anniverary", page_icon="", layout="wide")
@@ -13,18 +13,18 @@ st.set_page_config(page_title="Anniverary", page_icon="", layout="wide")
 # ---------------------------
 
 def main():
-    st.title("Gwynn and David's 3rd Anniversary!!!", text_alignment = "Center")
-    st.caption("Anniversary schedule and games - Play them now.", text_alignment = "Center")
+    st.markdown("<h1 style='text-align: center;'>Gwynn and David's 3rd Anniversary!!!</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>Anniversary schedule and games - Play them now.</p>", unsafe_allow_html=True)
 
-    tab1, tab2, tab3, tab4 = st.tabs(["Home", "Schedule", "Crossword", "Sudoku"])
+    tabs = st.tabs(["Home", "Schedule", "Crossword", "Sudoku"])
 
-    with tab1:
+    with tabs[0]:
         render_home()
-    with tab2:
+    with tabs[1]:
         render_schedule()
-    with tab3:
+    with tabs[2]:
         render_crossword()
-    with tab4:
+    with tabs[3]:
         render_sudoku()
 
 

@@ -232,9 +232,13 @@ def render_sudoku():
             st.session_state.sudoku_puzzle = puzzle
             st.session_state.sudoku_solution = solution
             st.rerun()
- 
- 
+
+    
     st.caption("Click a box to type a digit 1-9. Check Solution highlights right (green) vs wrong (red) cells; Reveal Puzzle fills in the answer.")
- 
-    html = sudoku_component_html(st.session_state.sudoku_puzzle, st.session_state.sudoku_solution)
-    components.html(html, height=460, scrolling=True)
+
+    puzzle_cols = st.columns([1, 1, 1])
+
+    with puzzle_cols[1]:
+      html = sudoku_component_html(st.session_state.sudoku_puzzle, st.session_state.sudoku_solution)
+      components.html(html, height=460, scrolling=True)
+
