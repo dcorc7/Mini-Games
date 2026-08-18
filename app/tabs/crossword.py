@@ -357,7 +357,11 @@ def crossword_component_html(grid, numbers, words, cell_px=42):
 def render_crossword():
     st.subheader("Mini Crossword")
     st.caption("Click a cell or clue to select a word. Type to fill letters; arrow keys to move; Backspace to erase and step back.")
- 
+
     numbers, words = build_crossword_words(SOLUTION_GRID)
     html = crossword_component_html(SOLUTION_GRID, numbers, words)
-    components.html(html, height=420, scrolling=True)
+
+    # Center the crossword by flanking it with empty columns
+    left, center, right = st.columns([2.25, 8, 1])
+    with center:
+        components.html(html, height=420, scrolling=True)
