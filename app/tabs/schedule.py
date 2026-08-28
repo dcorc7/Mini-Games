@@ -1,6 +1,9 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
+from pathlib import Path
+
+
 # ---------------------
 # ----- HOME PAGE -----
 # ---------------------
@@ -25,29 +28,25 @@ def render_schedule():
         # Define your fixed daily schedule items
         schedule = [
             {
-                "time": "08:00 AM", 
-                "task": "FILL IN"
+                "time": "05:00 PM", 
+                "task": "Gift"
             },
             {
-                "time": "09:30 AM", 
-                "task": "FILL IN"
+                "time": "06:00 PM", 
+                "task": "Placeholder"
             },
             {
-                "time": "11:00 AM", 
-                "task": "FILL IN"
+                "time": "07:30 PM", 
+                "task": "Dinner!"
             },
             {
-                "time": "01:00 PM", 
-                "task": "FILL IN"
+                "time": "09:00 PM", 
+                "task": "Ice Cream"
             },
             {
-                "time": "02:00 PM", 
-                "task": "FILL IN"
+                "time": "10:00 PM", 
+                "task": "Mummy Mode"
             },
-            {
-                "time": "04:30 PM", 
-                "task": "FILL IN"
-             },
         ]
 
         # Rendering the vertical timeline using columns
@@ -68,6 +67,16 @@ def render_schedule():
 
             # small gap
             st.write("")
+
+        image_path = Path(__file__).resolve().parent.parent / "assets" / "uchi.jpg"
+
+        img_cols = st.columns([1, 3, 1])
+
+        with img_cols[1]:
+            st.image(
+                str(image_path),
+                width = 275
+            )
 
     with page_cols[1]:
         st.markdown("""<h3 style=\"text-align: center; 
