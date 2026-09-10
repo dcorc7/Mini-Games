@@ -12,37 +12,37 @@ SOLUTION_GRID = [
     [None, None, None, "C", "A", "R", "L", None, "G", "E", "M"],
     [None, "W", "O", "O", None, "M", "E", "M", "O", None, "E"],
     ["P", "A", "D", "D", "L", "E", "S", None, None, None, "R"],
-    ["A", "M", None, "Y", "E", "N", None, None, "O", "R", "A"],
+    ["A", "C", None, "Y", "E", "N", None, None, "O", "R", "A"],
     ["D", "O", "T", None, "B", None, "C", "O", "R", "A", "L"],
 
 ]
  
 CLUES = {
-    "CANCUN": "mexico",
-    "TAXES": "pay",
-    "CARL": "middle name",
-    "GEM": "your initials",
-    "WOO": "wine zoo",
-    "MEMO": "law thing",
-    "PADDLES": "pickleball tools",
-    "AM": "not PM",
-    "YEN": "japan currency",
-    "ORA": "Rita",
-    "DOT": "gummy candy",
-    "CORAL": "Reef",
-    "PAD": "thai",
-    "WAMO": "self driving car",
-    "OD": "overdose",
-    "CODY": "____ simpson",
-    "LEB": "your company",
-    "CARMEN": "Playa Del _____",
-    "AXLES": "Wheel and _____",
-    "TA": "my georgetown job",
-    "NE": "where noah kahans sings about",
-    "CSGO": "game I play",
-    "NUMERAL": "romans use to count",
-    "OR": "surgery location",
-    "RA": "residant advisor",
+    "CANCUN": "Not Playa Del Carmen",
+    "TAXES": "Gwynn will have to start paying these",
+    "CARL": "David's middle name",
+    "GEM": "Gwynn's Initials",
+    "WOO": "Wine-Zoo",
+    "MEMO": "Document that Gwynn had to write a lot of in school",
+    "PADDLES": "Pickleball tools",
+    "AC": "What Gwynn never likes to turn on",
+    "YEN": "Bill ____",
+    "ORA": "Rita that appears in every crossword in existence",
+    "DOT": "Dome-shaped gummy candy",
+    "CORAL": "Australia has a Great one of these",
+    "PAD": "First part of a Thai dish",
+    "WACO": "Birthplace of Dr. Pepper",
+    "OD": "Overdose abreviation",
+    "CODY": "First name of your dreamy celebrity/athlete crush",
+    "LEB": "Org. that ",
+    "CARMEN": "Last word of a place that is Not Cancun",
+    "AXLES": "Wheels and _____",
+    "TA": "My georgetown job",
+    "NE": "PL where noah kahans sings about",
+    "CSGO": "A PC game I play",
+    "NUMERAL": "Romans used to count with this",
+    "OR": "Surgery loc.",
+    "RA": "Egyptian Sun God",
 }
  
  
@@ -362,6 +362,6 @@ def render_crossword():
     html = crossword_component_html(SOLUTION_GRID, numbers, words)
 
     # Center the crossword by flanking it with empty columns
-    left, center, right = st.columns([2.25, 8, 1])
+    left, center, right = st.columns([2.25, 28, 1])
     with center:
         components.html(html, height=420, scrolling=True)

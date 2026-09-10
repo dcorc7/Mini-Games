@@ -47,19 +47,19 @@ def render_home():
                 "photo4.jpeg",
                 "photo5.jpeg",
                 "photo6.jpeg",
-                "photo7.jpg",
+                "photo7.jpeg",
                 "photo8.jpeg",
                 "photo9.jpeg",
-                "photo10.jpeg",
+                "photo10.jpg",
                 "photo11.jpg",
-                "photo12.jpeg",
+                "photo12.jpg",
             ],
             event_details={
-                "title": "You're Invited",
-                "names": "Gwynn & David's 3rd Anniversary",
+                "title": "Gwynns Shrine Part 2",
+                "names": "Anniversary",
                 "date": "Tuesday, September 15th",
-                "time": "7:00 PM",
-                "location": "MYSTERY",
+                "time": "7:30 PM",
+                "location": "MYSTERY (Not Anymore)",
             }
         )
 

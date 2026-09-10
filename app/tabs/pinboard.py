@@ -12,9 +12,11 @@ MAX_DIMENSION = 500
 
 
 @st.cache_data
-def _img_to_base64(path_str: str) -> str:
+def _img_to_base64(path_str: str, rotate_deg: int = 0) -> str:
     path = Path(path_str)
     img = Image.open(path)
+    if rotate_deg:
+        img = img.rotate(rotate_deg, expand=True)
     img.thumbnail((MAX_DIMENSION, MAX_DIMENSION))
     if img.mode in ("RGBA", "P"):
         img = img.convert("RGB")
@@ -40,6 +42,18 @@ def render_pinboard(photo_paths: list[str], event_details: dict):
         (70, 85, 5, 130),
     ]
 
+    # Rotation applied to specific photos (by filename), in degrees.
+    PHOTO_ROTATIONS = {
+    "photo1.jpeg": -90,
+    "photo2.jpeg": -90,
+    "photo3.jpeg": -90,
+    "photo5.jpeg": -90,
+    "photo7.jpeg": -90,
+    "photo9.jpeg": -90,
+    "photo6.jpeg": 90,
+    "photo8.jpeg": -90,
+}
+
     photos_html = ""
     for i, filename in enumerate(photo_paths[:len(layout)]):
         top, left, rot, size = layout[i]
@@ -49,8 +63,10 @@ def render_pinboard(photo_paths: list[str], event_details: dict):
             st.warning(f"Image not found: {full_path}")
             continue
 
+        rotate_deg = PHOTO_ROTATIONS.get(filename, 0)
+
         try:
-            data_uri = _img_to_base64(str(full_path))
+            data_uri = _img_to_base64(str(full_path), rotate_deg)
         except Exception as e:
             st.warning(f"Could not load {filename}: {e}")
             continue
@@ -73,7 +89,7 @@ def render_pinboard(photo_paths: list[str], event_details: dict):
         'text-align:center; box-shadow: 0 8px 24px rgba(0,0,0,0.45); z-index:10;">'
         '<div style="position:absolute; top:-16px; left:50%; transform:translateX(-50%); font-size:26px;">📌</div>'
         f'<p style="font-family:\'Georgia\', serif; font-size:14px; letter-spacing:3px; color:#9a3324; margin:0;">'
-        f'{event_details.get("title", "You\'re Invited")}</p>'
+        f'{event_details.get("title", "Gwynn\'s Shrine Part 2")}</p>'
         f'<h2 style="font-family:\'Georgia\', serif; color:#333; margin:10px 0;">'
         f'{event_details.get("names", "")}</h2>'
         f'<p style="font-family:\'Georgia\', serif; color:#555; font-size:16px; margin:4px 0;">'
