@@ -28,12 +28,12 @@ def render_schedule():
         # Define your fixed daily schedule items
         schedule = [
             {
-                "time": "05:00 PM", 
-                "task": "Gift"
+                "time": "06:00 PM", 
+                "task": "Lawyering Complete"
             },
             {
-                "time": "06:00 PM", 
-                "task": "Placeholder"
+                "time": "07:00 PM", 
+                "task": "Gift?"
             },
             {
                 "time": "07:30 PM", 

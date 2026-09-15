@@ -362,6 +362,6 @@ def render_crossword():
     html = crossword_component_html(SOLUTION_GRID, numbers, words)
 
     # Center the crossword by flanking it with empty columns
-    left, center, right = st.columns([2.25, 28, 1])
+    left, center, right = st.columns([2.25, 29, 1])
     with center:
         components.html(html, height=420, scrolling=True)
