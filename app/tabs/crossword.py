@@ -29,7 +29,7 @@ CLUES = {
     "YEN": "Bill ____",
     "ORA": "Rita that appears in every crossword in existence",
     "DOT": "Dome-shaped gummy candy",
-    "CORAL": "Marine animal that makes up an Australian natural wonder",
+    "CORAL": "Marine animal in a Great Australian natural wonder",
     "PAD": "First part of a Thai dish",
     "WACO": "Birthplace of Dr. Pepper",
     "OD": "Overdose abreviation",
